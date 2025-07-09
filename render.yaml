@@ -15,6 +15,8 @@ services:
           property: connectionString
     staticPublishPath: staticfiles
     plan: free
+    build:
+      pythonVersion: 3.10
   - type: postgres
     name: studyhelp-db
     plan: free
