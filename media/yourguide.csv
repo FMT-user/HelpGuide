@@ -1,0 +1,12 @@
+app,topic,Durgesh,Prerana,Devender,Abhishek,Arman,Susheel,Kirti,US-HR,Arjuna,Snigdha
+Workato,WorkflowApps,1,0,1,1,0,0,0,0,0,0
+Workato,RecipeFunction,1,1,1,1,0,0,0,0,0,0
+Workato,RecipeOps,1,1,0,1,0,0,0,0,0,0
+Workato,HttpConnector,1,0,1,1,0,0,0,0,0,0
+Alteryx,Preparation Tools,1,0,0,0,0,0,0,0,1,1
+AWS,S3,1,0,0,1,1,0,0,0,0,0
+Management,GDC,0,0,0,0,0,1,0,0,0,0
+Management,GDC-HR,0,0,0,0,0,0,1,0,0,0
+Management,US-HR,0,0,0,0,0,0,0,1,0,0
+Alteryx,Macro,1,0,0,0,0,0,0,0,1,1
+Alteryx,Server,0,0,0,0,0,0,0,0,1,1

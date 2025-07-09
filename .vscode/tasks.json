@@ -1,0 +1,17 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "Django Migrate",
+			"command": "E:/Projects/StudyHub/venv/Scripts/python.exe",
+			"args": [
+				"manage.py",
+				"migrate"
+			],
+			"problemMatcher": [],
+			"group": "build",
+			"isBackground": false
+		}
+	]
+}

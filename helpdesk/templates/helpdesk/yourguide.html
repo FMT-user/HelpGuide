@@ -1,0 +1,59 @@
+{% extends 'helpdesk/base.html' %}
+{% block content %}
+<h2>YourGuide</h2>
+<form method="get" class="mb-3">
+    <div class="row">
+        <div class="col-md-4">
+            <label for="app">Application</label>
+            <select name="app" id="app" class="form-select" onchange="this.form.submit()">
+                <option value="">Select App</option>
+                {% for app in app_choices %}
+                <option value="{{ app }}" {% if app == selected_app %}selected{% endif %}>{{ app }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        {% if topics %}
+        <div class="col-md-4">
+            <label for="topic">Topic</label>
+            <select name="topic" id="topic" class="form-select" onchange="this.form.submit()">
+                <option value="">Select Topic</option>
+                {% for topic in topics %}
+                <option value="{{ topic }}" {% if topic == selected_topic %}selected{% endif %}>{{ topic }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        {% endif %}
+    </div>
+</form>
+{% if expert_details %}
+<div class="alert alert-info">
+    <strong>Expert Developers:</strong>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Working Time</th>
+                    <th>Timezone</th>
+                    <th>Experience (years)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for dev in expert_details %}
+                <tr>
+                    <td>{{ dev.name }}</td>
+                    <td>{{ dev.email }}</td>
+                    <td>{{ dev.working_time }}</td>
+                    <td>{{ dev.timezone }}</td>
+                    <td>{{ dev.experience }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% elif selected_topic %}
+<div class="alert alert-warning">No experts found for this topic.</div>
+{% endif %}
+{% endblock %}

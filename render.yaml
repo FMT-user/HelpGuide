@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: studyhelp
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn studyhelp.wsgi:application
+    envVars:
+      - key: DJANGO_SECRET_KEY
+        sync: false
+      - key: DJANGO_DEBUG
+        value: false
+      - key: DATABASE_URL
+        fromDatabase:
+          name: studyhelp-db
+          property: connectionString
+    staticPublishPath: staticfiles
+    plan: free
+  - type: postgres
+    name: studyhelp-db
+    plan: free

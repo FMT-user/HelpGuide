@@ -1,0 +1,14 @@
+{% extends 'helpdesk/base.html' %}
+{% block content %}
+<h2>Help Videos for {{ app_name }}</h2>
+<div class="list-group">
+    {% for video in videos %}
+    <div class="list-group-item">
+        <h5>{{ video.video_title }}</h5>
+        <a href="{{ video.video_url }}" target="_blank">Watch Video</a>
+    </div>
+    {% empty %}
+    <div class="list-group-item">No videos available for this app.</div>
+    {% endfor %}
+</div>
+{% endblock %}
